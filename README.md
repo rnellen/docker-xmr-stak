@@ -1,4 +1,4 @@
-# docker-xmr-stak
+# docker-xmr-stak-cpu
 [xmr-stak](https://github.com/fireice-uk/xmr-stak) miner in an Alpine Docker image. 
 
 The goal of this project is to quickly enable you to mine Monero with the xmr-stak miner without the hassle of knowing how to install or secure it. 
