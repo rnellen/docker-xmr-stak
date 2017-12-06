@@ -24,7 +24,17 @@ RUN git clone git@github.com:fireice-uk/xmr-stak.git \
     && cd xmr-stak \
     && git checkout -b build ${XMR_STAK_VERSION} \
     \
-    && cmake -DCMAKE_LINK_STATIC=ON . \
+    && cmake -CMAKE_BUILD_TYPE=Release \
+             -CPU_ENABLE=ON \
+             -CUDA_ENABLE=OFF \
+             -HWLOC_ENABLE=ON \
+             -MICROHTTPD_ENABLE=OFF \
+             -OpenCL_ENABLE=OFF \
+             -OpenSSL_ENABLE=ON \
+             -WIN_UAC=OFF \
+             -XMR-STAK_COMPILE=native \
+             -XMR-STAK_CURRENCY=monero \
+             -CMAKE_LINK_STATIC=ON . \
     && make -j$(nproc) \
     \
     && cp -t /app bin/xmr-stak config.txt \
